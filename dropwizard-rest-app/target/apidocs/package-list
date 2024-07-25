@@ -1,0 +1,6 @@
+com.dropwizard.app
+com.dropwizard.business
+com.dropwizard.dao
+com.dropwizard.exception
+com.dropwizard.model
+com.dropwizard.resource
