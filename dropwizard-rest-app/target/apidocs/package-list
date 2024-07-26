@@ -1,5 +1,8 @@
+com.dropwizard
 com.dropwizard.app
 com.dropwizard.business
+com.dropwizard.client
+com.dropwizard.constant
 com.dropwizard.dao
 com.dropwizard.exception
 com.dropwizard.model

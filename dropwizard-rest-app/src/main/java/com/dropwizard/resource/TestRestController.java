@@ -1,9 +1,9 @@
 package com.dropwizard.resource;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+
+import static com.dropwizard.client.TestApplicationClient.test;
 
 
 @Path("/test")
@@ -14,6 +14,13 @@ public class TestRestController {
     @Path("/hello")
     public String hi(){
         return "hello";
+    }
+
+    @GET
+    @Path("/register")
+    public String registerCustomer() {
+        test();
+        return "register";
     }
 
 }
