@@ -13,6 +13,7 @@ public class HibernateUtil {
         try {
             Configuration configuration = new Configuration().configure(); // assumes hibernate.cfg.xml is available
             configuration.addAnnotatedClass(com.dropwizard.model.Pokemon.class);
+            configuration.addAnnotatedClass(com.dropwizard.model.Trainer.class);
             configuration.configure();
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();

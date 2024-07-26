@@ -35,7 +35,9 @@ public class TestApplicationClient {
         System.out.print("Enter name for Pokemon: ");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
-        Pokemon pokemon = new Pokemon(name);
+        System.out.print("Enter pokemon level: ");
+        Integer level = Integer.valueOf(scanner.nextLine());
+        Pokemon pokemon = new Pokemon(name, level);
         pokemonService.save(pokemon);
         List<Pokemon> allPokemons = pokemonService.findAll();
         for (Pokemon pokemon1 : allPokemons) {

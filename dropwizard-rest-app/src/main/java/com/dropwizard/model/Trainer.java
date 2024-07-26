@@ -15,15 +15,23 @@ public class Trainer {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "age")
-    private int age;
+    @Column(name = "age", nullable = false)
+    private Integer age;
 
-    @Column(name = "date_added")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "date_added", nullable = false)
     private Date dateAdded;
 
-    @OneToMany(mappedBy = "trainer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "trainer", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Pokemon> pokemons;
+
+    // Constructors
+    public Trainer() {}
+
+    public Trainer(String name, Integer age, Date dateAdded) {
+        this.name = name;
+        this.age = age;
+        this.dateAdded = dateAdded;
+    }
 
     // Getters and setters
     public Long getId() {
@@ -42,11 +50,11 @@ public class Trainer {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -64,5 +72,15 @@ public class Trainer {
 
     public void setPokemons(Set<Pokemon> pokemons) {
         this.pokemons = pokemons;
+    }
+
+    @Override
+    public String toString() {
+        return "Trainer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", dateAdded=" + dateAdded +
+                '}';
     }
 }
