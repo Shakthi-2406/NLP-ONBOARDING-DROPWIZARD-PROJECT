@@ -1,0 +1,12 @@
+com/dropwizard/dao/PokemonDAO.class
+com/dropwizard/resource/TrainerResource.class
+com/dropwizard/dao/TrainerDAO.class
+com/dropwizard/model/Trainer.class
+com/dropwizard/exception/PokemonNotFoundException.class
+com/dropwizard/business/PokemonService.class
+com/dropwizard/resource/PokemonResource.class
+com/dropwizard/model/Pokemon.class
+com/dropwizard/business/TrainerService.class
+com/dropwizard/resource/TestRestController.class
+com/dropwizard/exception/TrainerNotFoundException.class
+com/dropwizard/app/App.class
