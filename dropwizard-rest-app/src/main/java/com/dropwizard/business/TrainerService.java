@@ -1,6 +1,5 @@
 package com.dropwizard.business;
 
-import com.dropwizard.dao.PokemonDAO;
 import com.dropwizard.dao.TrainerDAO;
 import com.dropwizard.model.Pokemon;
 import com.dropwizard.model.Trainer;

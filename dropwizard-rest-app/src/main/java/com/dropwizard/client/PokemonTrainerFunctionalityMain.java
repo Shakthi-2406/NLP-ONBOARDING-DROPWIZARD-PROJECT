@@ -122,18 +122,13 @@ public class PokemonTrainerFunctionalityMain {
         );
 
         if (existingPokemonOpt.isPresent()) {
-            // Get the existing Pokémon
             Pokemon existingPokemon = existingPokemonOpt.get();
 
-            // Remove the existing Pokémon from its previous trainer
             Long previousTrainerId = existingPokemon.getTrainer().getId();
             trainerService.releasePokemonFromTrainer(previousTrainerId, existingPokemon.getId());
-
-            // Add the existing Pokémon to the new trainer
             trainerService.addPokemonToTrainer(trainerId, existingPokemon);
             System.out.println("Added existing Pokémon to Trainer ID: " + trainerId);
         } else {
-            // Convert PokemonDTO to Pokemon and create a new Pokémon
             Pokemon pokemon = new Pokemon();
             pokemon.setName(pokemonDTO.getName());
             pokemon.setLevel(pokemonDTO.getLevel());
@@ -142,10 +137,7 @@ public class PokemonTrainerFunctionalityMain {
             pokemon.setGender(pokemonDTO.getGender());
             pokemon.setDateAdded(new Date());
 
-            // Save the new Pokémon
             pokemonService.savePokemon(pokemon);
-
-            // Add the new Pokémon to the new trainer
             trainerService.addPokemonToTrainer(trainerId, pokemon);
             System.out.println("Added new Pokémon to Trainer ID: " + trainerId);
         }

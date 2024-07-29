@@ -1,7 +1,6 @@
 package com.dropwizard.app;
 
 import com.dropwizard.resource.PokemonTrainerResource;
-import com.dropwizard.resource.TestRestController;
 import io.dropwizard.Application;
 import io.dropwizard.jersey.jackson.JsonProcessingExceptionMapper;
 import io.dropwizard.setup.Environment;
@@ -17,7 +16,6 @@ public class App extends Application<Configuration> {
     @Override
     public void run(Configuration c, Environment e) throws Exception {
         LOGGER.info("Registering REST resources");
-        e.jersey().register(new TestRestController());
         e.jersey().register(new PokemonTrainerResource());
         e.jersey().register(new JsonProcessingExceptionMapper(true));
         System.out.println("HERE");

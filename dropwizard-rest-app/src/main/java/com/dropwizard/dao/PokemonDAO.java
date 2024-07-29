@@ -28,10 +28,8 @@ public class PokemonDAO {
         try (Session session = sessionFactory.openSession()) {
             Transaction tx = session.beginTransaction();
             if (pokemon.getId() == null) {
-                // If the ID is null, it's a new entity
                 session.save(pokemon);
             } else {
-                // If the ID is not null, it's an existing entity that needs to be updated
                 session.update(pokemon);
             }
             tx.commit();

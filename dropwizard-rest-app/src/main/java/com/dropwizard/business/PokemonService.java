@@ -5,8 +5,6 @@ import com.dropwizard.constant.Gender;
 import com.dropwizard.dao.PokemonDAO;
 import com.dropwizard.model.Pokemon;
 import com.dropwizard.model.Trainer;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 
 import javax.inject.Inject;
 import java.util.List;
