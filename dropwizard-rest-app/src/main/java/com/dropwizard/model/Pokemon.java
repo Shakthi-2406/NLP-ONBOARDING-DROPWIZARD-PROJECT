@@ -26,7 +26,7 @@ public class Pokemon {
     @Column(name = "nickname")
     private String nickname;
 
-    @ElementCollection(targetClass = PokemonType.class)
+    @ElementCollection(targetClass = PokemonType.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "pokemon_types", joinColumns = @JoinColumn(name = "pokemon_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
@@ -39,7 +39,7 @@ public class Pokemon {
     @Column(name = "date_added")
     private Date dateAdded;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "trainer_id")
     private Trainer trainer;
 

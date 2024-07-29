@@ -4,6 +4,7 @@ com.dropwizard.business
 com.dropwizard.client
 com.dropwizard.constant
 com.dropwizard.dao
+com.dropwizard.dto
 com.dropwizard.exception
 com.dropwizard.model
 com.dropwizard.resource
