@@ -17,7 +17,6 @@ public class TestApplicationClient {
     public static void main(String[] args) {
         System.out.println("Welcome to Pokemon World!");
         initialize();
-        test();
     }
 
     private static void initialize() {
@@ -38,8 +37,8 @@ public class TestApplicationClient {
         System.out.print("Enter pokemon level: ");
         Integer level = Integer.valueOf(scanner.nextLine());
         Pokemon pokemon = new Pokemon(name, level);
-        pokemonService.save(pokemon);
-        List<Pokemon> allPokemons = pokemonService.findAll();
+        pokemonService.savePokemon(pokemon);
+        List<Pokemon> allPokemons = pokemonService.findAllPokemons();
         for (Pokemon pokemon1 : allPokemons) {
             System.out.println(pokemon1);
         }

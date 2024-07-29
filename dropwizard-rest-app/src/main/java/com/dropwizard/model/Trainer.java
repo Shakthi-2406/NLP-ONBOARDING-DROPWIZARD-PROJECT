@@ -21,7 +21,7 @@ public class Trainer {
     @Column(name = "date_added", nullable = false)
     private Date dateAdded;
 
-    @OneToMany(mappedBy = "trainer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "trainer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Set<Pokemon> pokemons;
 
     // Constructors
